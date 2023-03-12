@@ -25,6 +25,7 @@ socket.on('message', function (message, remote) {
 
 
 	// socket.send(response, 0, response.length, remote.port, remote.address);
+	console.log('')
 });
 
 socket.bind('5555', config.interface);
