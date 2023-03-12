@@ -12,9 +12,9 @@ socket.on('message', function (message, remote) {
 	console.log('CLIENT RECEIVED:', remote.address + ':' + remote.port +' - ' + message);
 	// const response = "Hellow there!";
     console.log(remote)
-	console.log(message)
+	console.log(message.toString())
 
-	if(message === 'ALL/OFF'){
+	if(message.toString() === 'ALL/OFF'){
 		console.log('turning screen off..')
 	}
 
