@@ -3,10 +3,12 @@ const dgram = require('dgram');
 const socket = dgram.createSocket('udp4');
 const express = require('express');
 const http = require('http');
+var config = require('./config.json')
+
 
 const app = express()
 
-http.createServer(app).listen(3621, ()=>{console.log('server is running at port 3621')})
+http.createServer(app).listen(config.webport, ()=>{console.log(`server is running at port ${config.webport}`)})
 
 
 
@@ -29,4 +31,12 @@ app.get('/test', (req, res)=>{
     res.send('okay')
 })
 
-socket.bind('8888');
+app.get('/screens/off', (req, res)=>{
+	console.log('requesting screens to turn off')
+	const udpsend = 'ALL/OFF'
+	socket.send(udpsend, 0, udpsend.length, 5555, '255.255.255.255');
+	res.send('requesting screens tu turn off')
+
+})
+
+socket.bind('8888', config.interface);
