@@ -18,7 +18,7 @@ socket.on('listening', function () {
 });
 
 socket.on('message', function (message, remote) {
-	console.log('CLIENT RECEIVED: ', remote.address + ':' + remote.port +' - ' + message);
+	console.log('SERVER RECEIVED: ', remote.address + ':' + remote.port +' - ' + message);
 });
 
 

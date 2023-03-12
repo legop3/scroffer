@@ -9,10 +9,10 @@ socket.on('listening', function () {
 });
 
 socket.on('message', function (message, remote) {
-	console.log('SERVER RECEIVED:', remote.address + ':' + remote.port +' - ' + message);
-	const response = "Hellow there!";
+	console.log('CLIENT RECEIVED:', remote.address + ':' + remote.port +' - ' + message);
+	// const response = "Hellow there!";
     console.log(remote)
-	socket.send(response, 0, response.length, remote.port, remote.address);
+	// socket.send(response, 0, response.length, remote.port, remote.address);
 });
 
 socket.bind('5555');
