@@ -37,3 +37,6 @@ Be sure you are in the project's directory and run `node client.js`
    - Example: http://192.168.0.25:3621
 2. Press the ON or OFF buttons to broadcast the ALL/ON or ALL/OFF signals over your network
 3. Your clients, if configured properly, should respond the button presses.
+
+# WARNING!!
+Do NOT open this to the internet. This is NOT secure in any way.
