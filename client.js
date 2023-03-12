@@ -26,6 +26,7 @@ socket.on('message', function (message, remote) {
 		}
 		if(config.ClientOS === 'linux/gnome/wayland'){
 			console.log('linux gnome wayland selected')
+			exec('./scripts/dpms-gnome.sh 0')
 		}
 	}
 
