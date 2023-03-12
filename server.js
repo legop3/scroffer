@@ -35,8 +35,14 @@ app.get('/screens/off', (req, res)=>{
 	console.log('requesting screens to turn off')
 	const udpsend = 'ALL/OFF'
 	socket.send(udpsend, 0, udpsend.length, 5555, '255.255.255.255');
-	res.send('requesting screens tu turn off')
+	res.send('requesting screens to turn off')
+})
 
+app.get('/screens/on', (req, res)=>{
+	console.log('requesting screens to turn on')
+	const udpsend = 'ALL/ON'
+	socket.send(udpsend, 0, udpsend.length, 5555, '255.255.255.255');
+	res.send('requesting screens to turn on')
 })
 
 socket.bind('8888', config.interface);

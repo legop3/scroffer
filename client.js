@@ -29,7 +29,21 @@ socket.on('message', function (message, remote) {
 			exec('./scripts/dpms-gnome.sh 0')
 		}
 	}
-
+	
+	if(message.toString() === 'ALL/ON'){
+		console.log('turning screen on..')
+		if(config.ClientOS === 'windows10') {
+			console.log('windows 10 selected')
+		}
+		if(config.ClientOS === 'linux/plasma/wayland'){
+			console.log('linux plasma wayland selected')
+			exec('kscreen-doctor -d on')
+		}
+		if(config.ClientOS === 'linux/gnome/wayland'){
+			console.log('linux gnome wayland selected')
+			exec('./scripts/dpms-gnome.sh 1')
+		}
+	}
 
 
 
