@@ -1,4 +1,5 @@
 
+const { exec } = require('child_process');
 const dgram = require('dgram');
 const socket = dgram.createSocket('udp4');
 var config = require('./config.json')
@@ -16,6 +17,16 @@ socket.on('message', function (message, remote) {
 
 	if(message.toString() === 'ALL/OFF'){
 		console.log('turning screen off..')
+		if(config.ClientOS === 'windows10') {
+			console.log('windows 10 selected')
+		}
+		if(config.ClientOS === 'linux/plasma/wayland'){
+			console.log('linux plasma wayland selected')
+			exec('kscreen-doctor -d off')
+		}
+		if(config.ClientOS === 'linux/gnome/wayland'){
+			console.log('linux gnome wayland selected')
+		}
 	}
 
 
