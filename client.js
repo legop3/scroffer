@@ -14,7 +14,7 @@ socket.on('message', function (message, remote) {
     console.log(remote)
 
 
-	if(message = 'ALL/OFF'){
+	if(message === 'ALL/OFF'){
 		console.log('turning screen off..')
 	}
 
