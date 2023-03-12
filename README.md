@@ -4,7 +4,7 @@ a thing to turn off all your screens.
 ## Requirements
 - Nodejs and NPM
 - git
-- A network that allows UDP broadcasts
+- A network that allows UDP broadcasts (most do)
 - Multiple computers on this network
 - Windows or Linux with KDE plasma or Gnome on Wayland
 
