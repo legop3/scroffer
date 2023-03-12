@@ -23,6 +23,7 @@ socket.on('message', function (message, remote) {
 	console.log('SERVER RECEIVED: ', remote.address + ':' + remote.port +' - ' + message);
 });
 
+app.use(express.static('staticweb'))
 
 app.get('/test', (req, res)=>{
     console.log('test request')
